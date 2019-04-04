@@ -19,7 +19,7 @@ RUN set -euxo pipefail \
     && apt autoremove -yqq --purge \
     && apt clean
 
-RUN pip install apache-airflow[aws,hdfs,hive,jdbc,password,postgres,slack,ssh] && whereis airflow && pip install botocore boto3 && pip install awscli --upgrade
+RUN pip install apache-airflow[aws,hdfs,s3,hive,jdbc,password,postgres,slack,ssh] && whereis airflow && pip install botocore boto3 && pip install awscli --upgrade
 
 COPY ./entrypoint.sh /entrypoint.sh
 
